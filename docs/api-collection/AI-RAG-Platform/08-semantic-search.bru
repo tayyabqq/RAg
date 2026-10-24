@@ -1,0 +1,24 @@
+meta {
+  name: 11 Semantic Search
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{base_url}}/search
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "knowledge_base_id": "{{knowledge_base_id}}",
+    "query": "Which databases does the platform use?",
+    "limit": 5
+  }
+}
